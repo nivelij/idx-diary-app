@@ -32,6 +32,8 @@
   --bullish-foreground: oklch(0.35 0.12 145);
   --bearish: oklch(0.85 0.12 25);
   --bearish-foreground: oklch(0.40 0.15 25);
+  --neutral: oklch(0.85 0.02 240);
+  --neutral-foreground: oklch(0.45 0.02 240);
   --ath-badge: oklch(0.90 0.10 65);
   --ath-foreground: oklch(0.35 0.15 65);
   --radius: 0.5rem;
@@ -111,6 +113,8 @@
   --color-bullish-foreground: var(--bullish-foreground);
   --color-bearish: var(--bearish);
   --color-bearish-foreground: var(--bearish-foreground);
+  --color-neutral: var(--neutral);
+  --color-neutral-foreground: var(--neutral-foreground);
   --color-ath-badge: var(--ath-badge);
   --color-ath-foreground: var(--ath-foreground);
   --radius-sm: calc(var(--radius) - 4px);

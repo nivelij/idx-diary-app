@@ -8,7 +8,7 @@ import { StockTile } from './stock-tile' // Added import for StockTile
 
 interface StockData {
   ticker: string
-  sentiment: 'bullish' | 'bearish'
+  sentiment: 'bullish' | 'bearish' | 'neutral'
   potential_range: string
 }
 

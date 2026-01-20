@@ -1,12 +1,12 @@
 'use client'
 
 import { Badge } from '@/components/ui/badge'
-import { TrendingUp, TrendingDown, Crown } from 'lucide-react'
+import { TrendingUp, TrendingDown, Minus, Crown } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 interface StockData {
   ticker: string
-  sentiment: 'bullish' | 'bearish'
+  sentiment: 'bullish' | 'bearish' | 'neutral'
   potential_range: string
 }
 
@@ -29,7 +29,6 @@ export function StockTable({ stocks }: { stocks: StockData[] }) {
         </thead>
         <tbody>
           {stocks.map((stock, idx) => {
-            const isBullish = stock.sentiment === 'bullish'
             const isATH = stock.potential_range === 'ATH'
 
             return (
@@ -46,15 +45,20 @@ export function StockTable({ stocks }: { stocks: StockData[] }) {
                   </span>
                 </td>
                 <td className="py-3 px-4">
-                  {isBullish ? (
+                  {stock.sentiment === 'bullish' ? (
                     <Badge className="bg-bullish text-bullish-foreground border-0 flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 w-fit">
                       <TrendingUp className="h-3.5 w-3.5" />
                       Bullish
                     </Badge>
-                  ) : (
+                  ) : stock.sentiment === 'bearish' ? (
                     <Badge className="bg-bearish text-bearish-foreground border-0 flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 w-fit">
                       <TrendingDown className="h-3.5 w-3.5" />
                       Bearish
+                    </Badge>
+                  ) : (
+                    <Badge className="bg-neutral text-neutral-foreground border-0 flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 w-fit">
+                      <Minus className="h-3.5 w-3.5" />
+                      Neutral
                     </Badge>
                   )}
                 </td>

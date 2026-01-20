@@ -8,7 +8,7 @@ import DiaryEntry from '@/components/diary-entry' // Declare the DiaryEntry vari
 
 interface StockData {
   ticker: string
-  sentiment: 'bullish' | 'bearish'
+  sentiment: 'bullish' | 'bearish' | 'neutral'
   potential_range: string
 }
 
