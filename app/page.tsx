@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { LoginGate } from '@/components/login-gate'
 import { DiaryCarousel } from '@/components/diary-carousel'
-import { BookOpen } from 'lucide-react'
 import DiaryEntry from '@/components/diary-entry' // Declare the DiaryEntry variable
 
 interface StockData {
@@ -67,22 +66,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-card shadow-sm">
-        <div className="max-w-3xl mx-auto px-4 py-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <BookOpen className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-semibold text-foreground">
-                IDX - Daily Summary
-              </h1>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main className="max-w-5xl mx-auto px-4 py-8">
         {isLoading && (

@@ -49,7 +49,9 @@ export function DiaryCarousel({ entries }: DiaryCarouselProps) {
 
   const cardWidth = containerWidth > 768 ? Math.min(600, containerWidth - 80) : containerWidth - 32
   const gap = 24
-  const offset = -currentIndex * (cardWidth + gap)
+  // Center the active card and show peeks on both sides
+  const centerOffset = (containerWidth - cardWidth) / 2
+  const offset = centerOffset - currentIndex * (cardWidth + gap)
 
   return (
     <div className="relative w-full" ref={containerRef}>
@@ -106,8 +108,8 @@ export function DiaryCarousel({ entries }: DiaryCarouselProps) {
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           drag="x"
           dragConstraints={{
-            left: -(entries.length - 1) * (cardWidth + gap),
-            right: 0,
+            left: centerOffset - (entries.length - 1) * (cardWidth + gap),
+            right: centerOffset,
           }}
           dragElastic={0.1}
           onDragEnd={(_, info) => {
