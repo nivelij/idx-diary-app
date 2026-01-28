@@ -25,7 +25,7 @@ export function DiaryEntry({ entry, index }: { entry: DiaryEntryData; index: num
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card className="border shadow-md hover:shadow-lg transition-shadow">
+      <Card className="border shadow-md hover:shadow-lg transition-shadow select-text">
         <CardHeader className="space-y-1 pb-4 border-b">
           <div className="flex items-center gap-3">
             <div className="flex flex-col items-center">
@@ -37,7 +37,7 @@ export function DiaryEntry({ entry, index }: { entry: DiaryEntryData; index: num
             </h2>
           </div>
         </CardHeader>
-        <CardContent className="space-y-6 pt-6">
+        <CardContent className="space-y-6 pt-6 select-text">
           {/* Summary Section */}
           <div>
             <h3 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">

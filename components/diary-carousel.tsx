@@ -104,6 +104,7 @@ export function DiaryCarousel({ entries }: DiaryCarouselProps) {
       <div className="overflow-hidden" ref={dragConstraints}>
         <motion.div
           className="flex gap-6"
+          style={{ touchAction: 'pan-x' }}
           animate={{ x: offset }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           drag="x"
@@ -112,6 +113,8 @@ export function DiaryCarousel({ entries }: DiaryCarouselProps) {
             right: centerOffset,
           }}
           dragElastic={0.1}
+          dragMomentum={false}
+          dragDirectionLock
           onDragEnd={(_, info) => {
             const threshold = 50
             if (info.offset.x < -threshold && currentIndex < entries.length - 1) {
